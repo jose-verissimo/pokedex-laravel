@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pokemon;
 
-class HomeController extends Controller
+class PokemonController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,11 +22,25 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function inventory()
     {
         $pokemons = Pokemon::all();
 
-        return view('home', [
+        return view('pages.pokemon.inventory', [
+            'pokemons' => $pokemons
+        ]);
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function catchEmAll()
+    {
+        $pokemons = Pokemon::all();
+
+        return view('pages.pokemon.catchEmAll', [
             'pokemons' => $pokemons
         ]);
     }

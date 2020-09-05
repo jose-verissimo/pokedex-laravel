@@ -37,7 +37,10 @@ body {
  */
 nav.sidebar {
     background-image: linear-gradient(180deg, #F8FFF7 0%, #CCFCC4 100%);
-    position: relative;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
 
     &:after {
         content: ' ';
@@ -48,6 +51,21 @@ nav.sidebar {
         height: 100vh;
         width: 5px;
     }
+
+    li.nav-item {
+        > a.nav-link {
+            text-transform: uppercase;
+            
+            > img {
+                max-width: 42px;
+                margin-right: 10px;
+            }
+        }
+
+        &.active {
+            background-color: #F8FFF7;
+        }
+    }
 }
 
 
@@ -56,6 +74,8 @@ nav.sidebar {
  */
 .card {
     background-color: transparent;
+    max-height: 100vh;
+    overflow: hidden;
 
     .card-header {
         background: $white;
@@ -72,9 +92,99 @@ nav.sidebar {
         }
     }
 
+    .card-body {
+        overflow-y: scroll;
+        
+        // Custom scrollbar.
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+            background-color: #FFF;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: #FFF;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFF;
+            background-image: linear-gradient(180deg, #69D2A3 0%, #2EB5B0 100%);
+        }
+    }
+
     // Custom full-width card.
     &.card-full-width {
         width: 100%;
     }
 }
 
+
+/**
+ * Pokemon cards
+ */
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+
+    > div {
+        flex: 1 1 130px;
+        margin: 15px;
+    }
+ }
+.pokemon-card {
+    background: #FFF;
+    margin-bottom: 2em;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+    max-width: 160px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: opacity 0.3s ease-in-out;
+    }
+      
+    &:hover {
+        transform: scale(1.05, 1.05);
+
+        &::after {
+            opacity: 1;
+        }
+
+        // Show gif and hide png.
+        .pokemon-card-image .pokemon-card-gif { display: block; }
+        .pokemon-card-image .pokemon-card-png { display: none; }
+    }
+
+    .pokemon-card-image {
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .pokemon-card-gif {
+            display: none;
+            margin: auto;
+        }
+    }
+
+    .pokemon-card-hp {
+        height: 5px;
+    }
+}

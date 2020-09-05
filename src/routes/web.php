@@ -20,5 +20,10 @@ Auth::routes();
 // });
 
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/pokemon/inventory', 'PokemonController@inventory')->name('inventory');
+Route::get('/pokemon/catch-em-all', 'PokemonController@catchEmAll')->name('catchEmAll');
+
+
