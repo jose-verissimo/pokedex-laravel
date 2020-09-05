@@ -4,7 +4,7 @@
     <div class="row">
         <div class="card card-full-width">
             <div class="card-header">
-                <span>{{ __('Dashboard') }}</span>
+                <span>{{ __('Catch \'em all') }}</span>
             </div>
 
             <div class="card-body">

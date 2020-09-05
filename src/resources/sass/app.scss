@@ -81,6 +81,8 @@ nav.sidebar {
         background: $white;
         padding: 0;
         box-shadow: 0px 4px 5px -4px rgb(0 0 0 / 20%);
+        position: relative;
+        z-index: 2;
 
         > span {
             padding: $card-spacer-y $card-spacer-x;
@@ -89,8 +91,6 @@ nav.sidebar {
             min-width: 250px;
             border-bottom: 4px solid $body-color;
             margin-bottom: -4px;
-            z-index: 1;
-            position: relative;
         }
     }
 
