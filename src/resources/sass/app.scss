@@ -89,6 +89,8 @@ nav.sidebar {
             min-width: 250px;
             border-bottom: 4px solid $body-color;
             margin-bottom: -4px;
+            z-index: 1;
+            position: relative;
         }
     }
 
@@ -186,5 +188,46 @@ nav.sidebar {
 
     .pokemon-card-hp {
         height: 5px;
+
+        .progress-bar {
+            background-image: linear-gradient(270deg, #00CBA7 0%, #9DDA8E 100%);
+        }
+    }
+}
+
+
+
+/**
+ * Pokemon modal
+ */
+#pokemon-modal {
+
+    // Types
+    .pokemon-modal-types {
+        margin-bottom: 1em;
+
+        > div {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        img {
+            width: 35px;
+            margin-right: 2px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    
+    // Stats
+    .pokemon-modal-stats {
+        .progress {
+            height: 0.4rem;
+            margin-top: 8px;
+
+            > .progress-bar {
+                background-image: linear-gradient(270deg, #00CBA7 0%, #9DDA8E 100%);
+            }
+        }
     }
 }

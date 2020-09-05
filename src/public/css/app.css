@@ -10975,6 +10975,8 @@ nav.sidebar li.nav-item.active {
   min-width: 250px;
   border-bottom: 4px solid #608183;
   margin-bottom: -4px;
+  z-index: 1;
+  position: relative;
 }
 
 .card .card-body {
@@ -11074,5 +11076,38 @@ nav.sidebar li.nav-item.active {
 
 .pokemon-card .pokemon-card-hp {
   height: 5px;
+}
+
+.pokemon-card .pokemon-card-hp .progress-bar {
+  background-image: linear-gradient(270deg, #00CBA7 0%, #9DDA8E 100%);
+}
+
+/**
+ * Pokemon modal
+ */
+
+#pokemon-modal .pokemon-modal-types {
+  margin-bottom: 1em;
+}
+
+#pokemon-modal .pokemon-modal-types > div {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#pokemon-modal .pokemon-modal-types img {
+  width: 35px;
+  margin-right: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#pokemon-modal .pokemon-modal-stats .progress {
+  height: 0.4rem;
+  margin-top: 8px;
+}
+
+#pokemon-modal .pokemon-modal-stats .progress > .progress-bar {
+  background-image: linear-gradient(270deg, #00CBA7 0%, #9DDA8E 100%);
 }
 

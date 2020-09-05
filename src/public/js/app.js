@@ -1932,6 +1932,161 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PokemonList.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PokemonList.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['pokemons'],
+  mounted: function mounted() {
+    /** console.dir(this.pokemons) */
+  },
+  data: function data() {
+    // Set default values, to avoid errors and cool animations.
+    return {
+      pokemonModal: {
+        type1: '',
+        type2: '',
+        hp: 0,
+        attack: 0,
+        defense: 0,
+        speed: 0,
+        special: 0
+      }
+    };
+  },
+  methods: {
+    openPokemonModal: function openPokemonModal(pokemon) {
+      console.log(pokemon);
+      this.pokemonModal = pokemon;
+      $('#pokemon-modal').modal('show');
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37546,6 +37701,308 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PokemonList.vue?vue&type=template&id=3e4d4a76&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PokemonList.vue?vue&type=template&id=3e4d4a76& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "pokemon-container" },
+      _vm._l(_vm.pokemons, function(pokemon) {
+        return _c("div", { key: pokemon.id }, [
+          _c(
+            "div",
+            {
+              staticClass: "pokemon-card",
+              on: {
+                click: function($event) {
+                  return _vm.openPokemonModal(pokemon)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "pokemon-card-type" }, [
+                _vm._v(_vm._s(pokemon.type1))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "pokemon-card-image" }, [
+                _c("img", {
+                  staticClass: "pokemon-card-png",
+                  attrs: { src: pokemon.png, alt: pokemon.name + " photo" }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "pokemon-card-gif",
+                  attrs: { src: pokemon.gif, alt: pokemon.name + " gif photo" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("h4", [_vm._v(_vm._s(pokemon.name))]),
+              _vm._v(" "),
+              _c("div", { staticClass: "pokemon-card-hp progress" }, [
+                _c("div", {
+                  staticClass: "progress-bar",
+                  style: { width: pokemon.hp + "%" },
+                  attrs: {
+                    role: "progressbar",
+                    "aria-valuenow": pokemon.hp,
+                    "aria-valuemin": "0",
+                    "aria-valuemax": "100"
+                  }
+                })
+              ])
+            ]
+          )
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal",
+        attrs: { id: "pokemon-modal", tabindex: "-1", role: "dialog" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-3 text-center" }, [
+                    _c("img", {
+                      staticClass: "img-fluid",
+                      attrs: {
+                        src: _vm.pokemonModal.gif,
+                        alt: _vm.pokemonModal.name + " gif photo"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-9" }, [
+                    _c("h3", [_vm._v(_vm._s(_vm.pokemonModal.name))]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(_vm.pokemonModal.description))]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "pokemon-modal-types" }, [
+                      _c("div", [
+                        _vm.pokemonModal.type1 !== undefined &&
+                        _vm.pokemonModal.type1 !== ""
+                          ? _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: {
+                                src:
+                                  "/assets/icons/ico_" +
+                                  _vm.pokemonModal.type1.toLowerCase() +
+                                  ".png",
+                                alt: _vm.pokemonModal.name + " type 1 photo"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            class:
+                              "pokemon-modal-color-" +
+                              _vm.pokemonModal.type1.toLowerCase()
+                          },
+                          [_vm._v(_vm._s(_vm.pokemonModal.type1))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _vm.pokemonModal.type2 !== undefined &&
+                        _vm.pokemonModal.type2 !== ""
+                          ? _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: {
+                                src:
+                                  "/assets/icons/ico_" +
+                                  _vm.pokemonModal.type2.toLowerCase() +
+                                  ".png",
+                                alt: _vm.pokemonModal.name + " type 2 photo"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            class:
+                              "pokemon-modal-color-" +
+                              _vm.pokemonModal.type2.toLowerCase()
+                          },
+                          [_vm._v(_vm._s(_vm.pokemonModal.type2))]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "pokemon-modal-stats" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-4" }, [_vm._v("HP")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-8" }, [
+                          _c("div", { staticClass: "progress" }, [
+                            _c("div", {
+                              staticClass: "progress-bar",
+                              style: { width: _vm.pokemonModal.hp + "%" },
+                              attrs: {
+                                role: "progressbar",
+                                "aria-valuenow": _vm.pokemonModal.hp,
+                                "aria-valuemin": "0",
+                                "aria-valuemax": "100"
+                              }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-4" }, [_vm._v("Attack")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-8" }, [
+                          _c("div", { staticClass: "progress" }, [
+                            _c("div", {
+                              staticClass: "progress-bar",
+                              style: { width: _vm.pokemonModal.attack + "%" },
+                              attrs: {
+                                role: "progressbar",
+                                "aria-valuenow": _vm.pokemonModal.attack,
+                                "aria-valuemin": "0",
+                                "aria-valuemax": "100"
+                              }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-4" }, [
+                          _vm._v("Defense")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-8" }, [
+                          _c("div", { staticClass: "progress" }, [
+                            _c("div", {
+                              staticClass: "progress-bar",
+                              style: { width: _vm.pokemonModal.defense + "%" },
+                              attrs: {
+                                role: "progressbar",
+                                "aria-valuenow": _vm.pokemonModal.defense,
+                                "aria-valuemin": "0",
+                                "aria-valuemax": "100"
+                              }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-4" }, [_vm._v("Speed")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-8" }, [
+                          _c("div", { staticClass: "progress" }, [
+                            _c("div", {
+                              staticClass: "progress-bar",
+                              style: { width: _vm.pokemonModal.speed + "%" },
+                              attrs: {
+                                role: "progressbar",
+                                "aria-valuenow": _vm.pokemonModal.speed,
+                                "aria-valuemin": "0",
+                                "aria-valuemax": "100"
+                              }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-4" }, [
+                          _vm._v("Special")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-8" }, [
+                          _c("div", { staticClass: "progress" }, [
+                            _c("div", {
+                              staticClass: "progress-bar",
+                              style: { width: _vm.pokemonModal.special + "%" },
+                              attrs: {
+                                role: "progressbar",
+                                "aria-valuenow": _vm.pokemonModal.special,
+                                "aria-valuemin": "0",
+                                "aria-valuemax": "100"
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary float-right mt-4",
+                    attrs: { type: "button" }
+                  },
+                  [_vm._v("Catch pokemon!")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-title" }, [_vm._v("Catch this Pokemon!")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -49734,6 +50191,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('pokemon-list', __webpack_require__(/*! ./components/PokemonList.vue */ "./resources/js/components/PokemonList.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49855,6 +50313,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PokemonList.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/PokemonList.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PokemonList_vue_vue_type_template_id_3e4d4a76___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PokemonList.vue?vue&type=template&id=3e4d4a76& */ "./resources/js/components/PokemonList.vue?vue&type=template&id=3e4d4a76&");
+/* harmony import */ var _PokemonList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PokemonList.vue?vue&type=script&lang=js& */ "./resources/js/components/PokemonList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PokemonList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PokemonList_vue_vue_type_template_id_3e4d4a76___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PokemonList_vue_vue_type_template_id_3e4d4a76___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/PokemonList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/PokemonList.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/PokemonList.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PokemonList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PokemonList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PokemonList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PokemonList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/PokemonList.vue?vue&type=template&id=3e4d4a76&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/PokemonList.vue?vue&type=template&id=3e4d4a76& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PokemonList_vue_vue_type_template_id_3e4d4a76___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PokemonList.vue?vue&type=template&id=3e4d4a76& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PokemonList.vue?vue&type=template&id=3e4d4a76&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PokemonList_vue_vue_type_template_id_3e4d4a76___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PokemonList_vue_vue_type_template_id_3e4d4a76___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
