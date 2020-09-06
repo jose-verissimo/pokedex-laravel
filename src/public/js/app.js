@@ -2064,9 +2064,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['pokemons', 'have-catched'],
+  props: ['pokemon-inventory', 'have-catched'],
   mounted: function mounted() {
-    /** console.dir(this.pokemons) */
+    // Seems pointless, but it's so I can control the state later on.
+    this.pokemons = this.pokemonInventory;
   },
   data: function data() {
     // Set default values, to avoid errors and cool animations.
@@ -2079,7 +2080,8 @@ __webpack_require__.r(__webpack_exports__);
         defense: 0,
         speed: 0,
         special: 0
-      }
+      },
+      pokemons: []
     };
   },
   methods: {
@@ -2114,6 +2116,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Create a relation between the logged user and the clicked pokemon.
     onClickReleasePokemon: function onClickReleasePokemon(pokemonModal, e) {
+      var _this = this;
+
       var button = e.target; // Disable the button and show feedback.
 
       button.disabled = true;
@@ -2128,8 +2132,11 @@ __webpack_require__.r(__webpack_exports__);
           timeout: 1000
         }).show(); // Hide modal.
 
-        $('#pokemon-modal').modal('hide');
-        pokemons.pop();
+        $('#pokemon-modal').modal('hide'); // Remove pokemon from array.
+
+        _this.pokemons = _this.pokemons.filter(function (p) {
+          return p.relation_id != pokemonModal.relation_id;
+        });
         button.disabled = false;
         button.innerHTML = "Release pokemon";
       })["catch"](function (err) {
@@ -40904,7 +40911,7 @@ var render = function() {
     _c(
       "div",
       { staticClass: "pokemon-container" },
-      _vm._l(_vm.pokemons, function(pokemon) {
+      _vm._l(this.pokemons, function(pokemon) {
         return _c("div", { key: pokemon.id }, [
           _c(
             "div",

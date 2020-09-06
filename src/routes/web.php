@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Auth;
 */
 Auth::routes();
 
+Route::get('/', function () {
+    return redirect('/pokemon/inventory');
+});
+
 Route::get('/copyright', function () {
     return view('pages.copyright');
 })->name('copyright');

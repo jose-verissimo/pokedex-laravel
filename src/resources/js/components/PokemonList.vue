@@ -2,7 +2,7 @@
     <div>
         <!-- Pokemon List -->
         <div class="pokemon-container">
-            <div v-for="pokemon in pokemons" :key="pokemon.id">
+            <div v-for="pokemon in this.pokemons" :key="pokemon.id">
                 <div class="pokemon-card" v-on:click="openPokemonModal(pokemon)">
                     <div class="pokemon-card-type">{{ pokemon.type1 }}</div>
                     <div class="pokemon-card-image">
@@ -122,8 +122,11 @@
 
 <script>
     export default {
-        props: ['pokemons', 'have-catched'],
-        mounted() { /** console.dir(this.pokemons) */ },
+        props: ['pokemon-inventory', 'have-catched'],
+        mounted() {
+            // Seems pointless, but it's so I can control the state later on.
+            this.pokemons = this.pokemonInventory;
+        },
 
 
         data: function() {
@@ -137,7 +140,8 @@
                     defense: 0,
                     speed: 0,
                     special: 0
-                }
+                },
+                pokemons: []
             }
         },
         methods: {
@@ -202,7 +206,8 @@
                     // Hide modal.
                     $('#pokemon-modal').modal('hide');
 
-                    pokemons.pop();
+                    // Remove pokemon from array.
+                    this.pokemons = this.pokemons.filter(p => p.relation_id != pokemonModal.relation_id)
 
                     button.disabled = false
                     button.innerHTML = "Release pokemon"

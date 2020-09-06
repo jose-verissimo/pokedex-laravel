@@ -38,6 +38,16 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="character">{{ __('Character') }}</label>
+
+                                <select class="form-control" id="character" name="character">
+                                    <option value="blanche">Blanche</option>
+                                    <option value="candela">Candela</option>
+                                    <option value="spark">Spark</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="password">{{ __('Password') }}</label>
 
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">

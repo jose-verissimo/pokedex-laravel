@@ -14,7 +14,7 @@
                     </div>
                 @endif
 
-                <pokemon-list :pokemons="{{ json_encode($pokemonInventory) }}" :have-catched="true"></pokemon-list>
+                <pokemon-list :pokemon-inventory="{{ json_encode($pokemonInventory) }}" :have-catched="true"></pokemon-list>
 
                 <div class="{{ count($pokemonInventory) > 0 ? 'd-none' : 'mt-4'}}">
                     <h5 class="card-title">No pokemon!</h5>

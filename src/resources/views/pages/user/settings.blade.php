@@ -43,7 +43,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="character">Character</label>
+                                <label for="character">{{ __('Character') }}</label>
+
                                 <select class="form-control" id="character" name="character">
                                     <option {{ $user->character == 'blanche' ? 'selected' : '' }} value="blanche">Blanche</option>
                                     <option {{ $user->character == 'candela' ? 'selected' : '' }} value="candela">Candela</option>
