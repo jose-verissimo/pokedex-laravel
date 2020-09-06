@@ -1,5 +1,6 @@
 # Pokedex Demo
 Pokedex laravel demonstration using Docker, Bootstrap 4, Vue.js & Laravel.
+This application allows you to capture 151 pokemons and release them later! Also has registration and login functionalities.
 
 ## Setup
 1. Install and build the multiple docker containers
