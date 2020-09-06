@@ -56,6 +56,11 @@ nav.sidebar {
         width: 5px;
     }
 
+    // Logo
+    .navbar-brand {
+        padding: 10px 60px 0px;
+    }
+
     li.nav-item {
         > a.nav-link {
             text-transform: uppercase;
@@ -137,8 +142,9 @@ nav.sidebar {
     margin: -15px;
 
     > div {
-        flex: 1 1 130px;
+        flex: 1 1 150px;
         margin: 15px;
+        max-width: 150px;
     }
  }
 .pokemon-card {

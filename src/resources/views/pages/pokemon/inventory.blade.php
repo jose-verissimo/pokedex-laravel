@@ -14,9 +14,12 @@
                     </div>
                 @endif
 
-                {{ __('You are logged in!') }}
-                
                 <pokemon-list :pokemons="{{ json_encode($pokemonInventory) }}" :have-catched="true"></pokemon-list>
+
+                <div class="{{ count($pokemonInventory) > 0 ? 'd-none' : 'mt-4'}}">
+                    <h5 class="card-title">No pokemon!</h5>
+                    <p class="card-text">Find some pokemons out in the wild, <a href="{{ route('catchEmAll') }}">here</a>.</p>
+                </div>
             </div>
         </div>
     </div>

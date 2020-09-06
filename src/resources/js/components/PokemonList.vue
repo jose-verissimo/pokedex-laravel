@@ -202,12 +202,18 @@
                     // Hide modal.
                     $('#pokemon-modal').modal('hide');
 
+                    pokemons.pop();
+
                     button.disabled = false
                     button.innerHTML = "Release pokemon"
                 })
                 .catch(err => {
                     console.log(err)
                 })
+            },
+
+            // Update the inventory list.
+            updateInventory: function() {
             }
         }
     }

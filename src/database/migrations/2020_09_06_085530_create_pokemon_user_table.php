@@ -15,6 +15,7 @@ class CreatePokemonUserTable extends Migration
     {
         Schema::create('pokemon_user', function (Blueprint $table) {
             $table->engine = 'InnoDB';
+            $table->increments('relation_id');
             $table->integer('user_id')->unsigned();
             $table->integer('pokemon_id')->unsigned();
 

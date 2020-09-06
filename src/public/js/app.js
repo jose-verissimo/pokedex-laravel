@@ -2129,12 +2129,15 @@ __webpack_require__.r(__webpack_exports__);
         }).show(); // Hide modal.
 
         $('#pokemon-modal').modal('hide');
+        pokemons.pop();
         button.disabled = false;
         button.innerHTML = "Release pokemon";
       })["catch"](function (err) {
         console.log(err);
       });
-    }
+    },
+    // Update the inventory list.
+    updateInventory: function updateInventory() {}
   }
 });
 
