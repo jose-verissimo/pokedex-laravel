@@ -14,7 +14,8 @@ class CreatePokemonsTable extends Migration
     public function up()
     {
         Schema::create('pokemons', function (Blueprint $table) {
-            $table->id();
+            $table->engine = 'InnoDB';
+            $table->increments('id');
             $table->char('name', 150);
             $table->string('description');
             $table->char('type1', 90);

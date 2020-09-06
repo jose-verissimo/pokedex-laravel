@@ -15,15 +15,12 @@ use Illuminate\Support\Facades\Auth;
 */
 Auth::routes();
 
-// Route::get('/', function () {
-//     return view('welcome', [ 'type' => "apple" ]);
-// });
-
-
 // Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/pokemon/inventory', 'PokemonController@inventory')->name('inventory');
 Route::get('/pokemon/catch-em-all', 'PokemonController@catchEmAll')->name('catchEmAll');
+Route::post('/pokemon/catch', 'PokemonController@catch')->name('catchPokemon');
+Route::post('/pokemon/release', 'PokemonController@release')->name('releasePokemon');
 
 

@@ -43,6 +43,6 @@ class User extends Authenticatable
      */
     public function pokemons()
     {
-        return $this->hasMany(Pokemon::class);
+        return $this->belongsToMany('App\Pokemon');
     }
 }

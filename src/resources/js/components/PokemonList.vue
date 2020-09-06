@@ -20,10 +20,10 @@
 
         <!-- Pokemon Modal -->
         <div class="modal" id="pokemon-modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Catch this Pokemon!</h5>
+                        <h5 class="modal-title text-uppercase">Catch this Pokemon!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
@@ -106,7 +106,13 @@
                             </div>
                         </div>
                         
-                        <button type="button" class="btn btn-primary float-right mt-4">Catch pokemon!</button>
+                        <button type="button" class="btn btn-primary float-right mt-4"
+                            v-if="haveCatched === undefined || haveCatched === false"
+                            v-on:click="onClickCatchPokemon(pokemonModal, $event)">Catch pokemon</button>
+                        
+                        <button type="button" class="btn btn-primary float-right mt-4"
+                            v-if="haveCatched !== undefined && haveCatched === true"
+                            v-on:click="onClickReleasePokemon(pokemonModal, $event)">Release pokemon</button>
                     </div>
                 </div>
             </div>
@@ -116,7 +122,7 @@
 
 <script>
     export default {
-        props: ['pokemons'],
+        props: ['pokemons', 'have-catched'],
         mounted() { /** console.dir(this.pokemons) */ },
 
 
@@ -135,10 +141,73 @@
             }
         },
         methods: {
-            openPokemonModal: function (pokemon) {
-                console.log(pokemon)
+            // Show correct pokemon on card click and open modal.
+            openPokemonModal: function(pokemon) {
                 this.pokemonModal = pokemon
+
                 $('#pokemon-modal').modal('show'); 
+            },
+
+            // Create a relation between the logged user and the clicked pokemon.
+            onClickCatchPokemon: function(pokemonModal, e) {
+                let button = e.target;
+
+                // Disable the button and show feedback.
+                button.disabled = true
+                button.innerHTML = "Catching pokemon..."
+
+                // Call pokemon controller.
+                axios.post('/pokemon/catch', {
+                    pokemonModal: pokemonModal
+                })
+                .then(res => {
+                    // Show success notification.
+                    new Noty({
+                        type: 'success',
+                        text: 'Pokemon successfully added to inventory.',
+                        timeout: 1000
+                    }).show();
+
+                    // Hide modal.
+                    $('#pokemon-modal').modal('hide');
+
+                    button.disabled = false
+                    button.innerHTML = "Catch pokemon"
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+            },
+
+            // Create a relation between the logged user and the clicked pokemon.
+            onClickReleasePokemon: function(pokemonModal, e) {
+                let button = e.target;
+
+                // Disable the button and show feedback.
+                button.disabled = true
+                button.innerHTML = "Releasing pokemon..."
+
+                axios.post('/pokemon/release', {
+                    pokemonModal: pokemonModal
+                })
+                .then(res => {
+
+                    // Show success notification.
+                    new Noty({
+                        type: 'success',
+                        text: 'Pokemon successfully removed from inventory.',
+                        timeout: 1000
+                    }).show();
+
+                    // Hide modal.
+                    $('#pokemon-modal').modal('hide');
+
+                    button.disabled = false
+                    button.innerHTML = "Release pokemon"
+                })
+                .catch(err => {
+                    console.log(err)
+                })
             }
         }
     }

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="card card-full-width">
             <div class="card-header">
-                <span>{{ __('Dashboard') }}</span>
+                <span>{{ __('Inventory') }}</span>
             </div>
 
             <div class="card-body">
@@ -15,10 +15,8 @@
                 @endif
 
                 {{ __('You are logged in!') }}
-
-                @foreach ($pokemons as $pokemon)
-                    {{ $pokemon->name }}<br>
-                @endforeach
+                
+                <pokemon-list :pokemons="{{ json_encode($pokemonInventory) }}" :have-catched="true"></pokemon-list>
             </div>
         </div>
     </div>

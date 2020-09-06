@@ -7,6 +7,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Noty (notifications)
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
+
 
 // Keep sidebar from top to bottom.
 main[role="main"] {
@@ -201,6 +205,7 @@ nav.sidebar {
  * Pokemon modal
  */
 #pokemon-modal {
+    background: rgb(27 204 164 / 25%);
 
     // Types
     .pokemon-modal-types {
